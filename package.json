@@ -9,8 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "ifps": "^0.1.1",
+    "next": "14.2.11",
+    "pragma": "^1.0.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.11"
-  }
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.22.10",
+    "prettier-plugin-solidity": "^1.4.1",
+    "solc": "^0.8.27"
+  },
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
