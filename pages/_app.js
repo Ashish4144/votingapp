@@ -1,5 +1,20 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
+import React from "react";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+
+//INTERNAL IMPORT
+import { VotingProvider } from "../context/voter";
+import  NavBar  from "../components/NavBar/NavBar";
+const _app = ({ Component, pageProps}) => (
+  <VotingProvider>
+    <div>
+      <NavBar />
+      <div>
+      <Component {...pageProps} />;
+      </div> 
+    </div>
+  </VotingProvider>
+);
+ 
+
+export default _app;
