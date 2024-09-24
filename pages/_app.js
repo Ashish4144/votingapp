@@ -3,18 +3,18 @@ import React from "react";
 
 
 //INTERNAL IMPORT
-import { VotingProvider } from "../context/voter";
+import  {VotingProvider}  from "../context/voter";
 import  NavBar  from "../components/NavBar/NavBar";
-const _app = ({ Component, pageProps}) => (
+const MyApp = ({ Component, pageProps}) => (
   <VotingProvider>
     <div>
       <NavBar />
       <div>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
       </div> 
     </div>
   </VotingProvider>
 );
  
 
-export default _app;
+export default MyApp;

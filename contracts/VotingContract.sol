@@ -23,7 +23,7 @@ contract Create {
         string ipfs;
     }
 
-    event CandidateEvent(
+    event CandidateCreate(
         uint256 indexed candidateID,
         string age,
         string name,
@@ -37,6 +37,12 @@ contract Create {
     mapping(address => Candidate) public candidates;
 
     // Voter
+
+    address[] public votedVoters;
+
+    address[] public voterAddress;
+    mapping(address => Voter) public voters;
+    
     struct Voter {
         uint256 voter_voterID;
         string voter_name;
@@ -48,7 +54,7 @@ contract Create {
         string voter_ipfs;
     }
 
-    event VoterCreated(
+    event VoterCreated (
         uint256 indexed voter_voterID,
         string voter_name,
         string voter_image,
@@ -58,10 +64,8 @@ contract Create {
         uint256 voter_vote,
         string voter_ipfs
     );
-
-    mapping(address => Voter) public voters;
-    address[] public voterAddress;
-    address[] public votedVoters;
+    
+    //----END OF VOTER DATA
 
     constructor() {
         votingOrganizer = msg.sender;
@@ -88,11 +92,12 @@ contract Create {
         candidate.candidateID = idNumber;
         candidate.image = _image;
         candidate.voteCount = 0;
+        candidate._address = _address;
         candidate.ipfs = _ipfs;
 
         candidateAddress.push(_address);
 
-        emit CandidateEvent(
+        emit CandidateCreate (
             idNumber,
             _age,
             _name,
@@ -151,7 +156,7 @@ contract Create {
         uint256 idNumber = _voterID.current();
 
         Voter storage voter = voters[_address];
-        require(voter.voter_allowed == 0, "Voter already allowed");
+        require(voter.voter_allowed == 0);
 
         voter.voter_allowed = 1;
         voter.voter_name = _name;

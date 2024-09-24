@@ -16,39 +16,41 @@ const fetchContract = (signerOrProvider) =>
   export const VotingContext = React.createContext();
 
   export const VotingProvider = ({ children }) => {
-    const votingTitle = 'My first smart contract app';
-    const router = useRouter();
-    const [currentAccount, setCurrentAccount] = useState('');
-    const [candidateLength, setCandidateLength] = useState('');
-    const pushCandidate = [];
-    const candidateIndex = [];
-    const [candidateArray, setCandidateArray] = useState(pushCandidate);
 
-      ////-----END OF CANDIDATE DATA
+    return <div>OKKKKK</div>
+    // const votingTitle = 'My first smart contract app';
+    // const router = useRouter();
+    // const [currentAccount, setCurrentAccount] = useState('');
+    // const [candidateLength, setCandidateLength] = useState('');
+    // const pushCandidate = [];
+    // const candidateIndex = [];
+    // const [candidateArray, setCandidateArray] = useState(pushCandidate);
 
-    const [error, setError] = useState('');
-    const highestVote = [];
+    //   ////-----END OF CANDIDATE DATA
 
-    //-------VOTER SECTION
+    // const [error, setError] = useState('');
+    // const highestVote = [];
 
-    const pushVoter = [];
-    const [voterArray, setVoterArray] = useState(pushVoter);
-    const [voterLength, setVoterLength] = useState('');
-    const [voterAddress, setVoterAddress] = useState([]);
+    // //-------VOTER SECTION
 
-    //-------CONNECTING M
+    // const pushVoter = [];
+    // const [voterArray, setVoterArray] = useState(pushVoter);
+    // const [voterLength, setVoterLength] = useState('');
+    // const [voterAddress, setVoterAddress] = useState([]);
 
-    const checkIfWalletIsConnected = async() =>{
-      if (!window.ethereum) return setError("Please Install Metamask");
+    // //-------CONNECTING M
+
+    // const checkIfWalletIsConnected = async() =>{
+    //   if (!window.ethereum) return setError("Please Install Metamask");
       
-    }
+    // }
 
 
 
-      return ( <VotingContext.Provider value={{votingTitle}}>
-             { children }
-        </VotingContext.Provider>
-      );
+    //   return ( <VotingContext.Provider value={{votingTitle}}>
+    //          { children }
+    //     </VotingContext.Provider>
+    //   );
 
   };
 
